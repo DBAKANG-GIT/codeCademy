@@ -15,11 +15,29 @@ while ((answer != codeword) && (misses < 7) )
   display_misses(misses);
   display_status(incorrect, answer);
   std::cout << "Please enter your guess: "<<std::endl;
-  std::cin >>> letter;
+  std::cin >> letter;
   
-  for (int  )
+  for (int i = 0; i < codeword.length(); i++)
+  {
+    if (letter == codeword[i])
+    {
+      answer[i] = letter;
+      guess = true;
+    }
+  }
+  if (guess)
+  {
+    std::cout << "Correct"<<std::endl;
+  }
+  else
+  {
+    std::cout <<"Incorrect! The tractor beam pulls the person in further."<<std::endl;
+    incorrect.push_back(letter);
+    misses++;
 
-   misses++;
+  }
+    guess = false;
+   
 }
 end_game(answer, codeword);
 
